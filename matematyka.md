@@ -73,30 +73,30 @@ W tej metodzie przekształcamy wyraz na tylko alternatywe i koniunkcji. Do tego 
 
 Przykładowy wyraz: `(p → q) → (¬p ∨ q)`
 
-- Cały wielki wyraz, możemy zastąpić na: `¬(p → q) ∨ (¬p ∨ q)` (*zamiana implikacji na alternatywe*)
+- Cały wielki wyraz, możemy zastąpić na: `¬(p → q) ∨ (¬p ∨ q)` (_zamiana implikacji na alternatywe_)
 
-- Te same zrobimy i z częścią `p → q`: `¬(¬p ∨ q) ∨ (¬p ∨ q)` (*zamiana implikacji na alternatywe*)
+- Te same zrobimy i z częścią `p → q`: `¬(¬p ∨ q) ∨ (¬p ∨ q)` (_zamiana implikacji na alternatywe_)
 
-- Łączność alternatywy pozwala nam pozbyć się nawiasów w `(¬p ∨ q)` (negacja w `¬(¬p ∨ q)` nie pozwala nam tego zrobić w tej części): `¬(¬p ∨ q) ∨ ¬p ∨ q` (*łączność alternatywy*)
+- Łączność alternatywy pozwala nam pozbyć się nawiasów w `(¬p ∨ q)` (negacja w `¬(¬p ∨ q)` nie pozwala nam tego zrobić w tej części): `¬(¬p ∨ q) ∨ ¬p ∨ q` (_łączność alternatywy_)
 
-- Aby pozbyć się negacji w `¬(¬p ∨ q)` wykorzystujemy `prawo de Morgana`: `(p ^ ¬q) ∨ ¬p ∨ q` (*prawo de Morgana*)
+- Aby pozbyć się negacji w `¬(¬p ∨ q)` wykorzystujemy `prawo de Morgana`: `(p ^ ¬q) ∨ ¬p ∨ q` (_prawo de Morgana_)
 
-- Aby pozbyć się teraz nawiasów w `(p ^ ¬q) ∨ ¬p ∨ q` wykorzystujemy `rozdzielność koniunkcji` (jako mnożenie) (np. `q` pomnożymy na `(p ^ ¬q)`): `((p ∨ q) ^ (¬q ∨ q)) ∨ ¬p` (*rozdzielność koniunkcji*)
+- Aby pozbyć się teraz nawiasów w `(p ^ ¬q) ∨ ¬p ∨ q` wykorzystujemy `rozdzielność koniunkcji` (jako mnożenie) (np. `q` pomnożymy na `(p ^ ¬q)`): `((p ∨ q) ^ (¬q ∨ q)) ∨ ¬p` (_rozdzielność koniunkcji_)
 
-- ... : `(p ∨ q) ∨ ¬p` (*rozdzielność koniunkcji*)
+- ... : `(p ∨ q) ∨ ¬p` (_rozdzielność koniunkcji_)
 
-- ... : `p ∨ q ∨ ¬p` (*rozdzielność koniunkcji*)
+- ... : `p ∨ q ∨ ¬p` (_rozdzielność koniunkcji_)
 
-- ... : `(p ∨ ¬p) ∨ q` (*rozdzielność koniunkcji*)
+- ... : `(p ∨ ¬p) ∨ q` (_rozdzielność koniunkcji_)
 
 Tautologia
 
 #### Zamiana na arytmetykę
 
-| Wzory |       |
-| ----- | ----- |
-| ¬p | 1 - p |
-| p^q | p * q |
+| Wzory |        |
+| ----- | ------ |
+| ¬p    | 1 - p  |
+| p^q   | p \* q |
 
 Przykładowy wyraz: `(p → q) → (¬p ∨ q)`
 
@@ -118,7 +118,6 @@ Przykładowy wyraz: `(p → q) → (¬p ∨ q)`
 
 ...
 
-
 ## Dla wszystkich, istnieje
 
 ...
@@ -129,4 +128,89 @@ Przykładowy wyraz: `(p → q) → (¬p ∨ q)`
 
 ## Grafy
 
+`Graf` - jest to figura na płaszczyznie, która składa się z wierzchołków i krawędzi.
+
+`Wierzchołek` - punkt, należący do figury.
+
+`Krawędź` - linia która łączy dwa wierzchołka.
+
+Matematycznie to zapisują tak:
+
+**G = (V, E)**
+
+- `G` - Graf
+- `V` - zbiór wierzchołków (po ang. vertex)
+- `E` - zbiór krawędzi, każda krawędź jest składana z dwóch wierzchołków (po ang. edge)
+
+Przykład:
+
+G = (V = {a, b, c}, E = {ab, bc, ca})
+
+Ogólny graf nazywa się `G`, ale nie jest to wymaganym wszystkie grafy tak nazywać. Jedyna zasada - nazywać z wielkiej litery. (np. A, G1, Graf2, Map, ...)
+
+Zapis V(G) lub E(G) wskazuje nam, że zwraca nam to zbiór wierzchołków grafa G lub zbiór krawędzi grafa G odpowiednie.
+
+Przykłady grafów:
+
+![coś](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0SL0U1aJt7tWKrlP7U5qrrelEQFiHhLQnXA&s)
+
+![coś](https://www.algorytm.edu.pl/images/wagowy.png)
+
+![coś](https://www.flynerd.pl/wp-content/uploads/2018/10/prosty-graf.png)
+
+![coś](https://www.flynerd.pl/wp-content/uploads/2018/10/Pari-metro.jpg)
+
+`Stopień (degree)` - liczba krawędzi wychodzących z (wchodzących do) wierzchołka lub liczba krawędzi grafu incydentnych do wierzchołka.
+
+Matematyczna funkcja, która zwraca stopień wierzchołka: `deg(v)`,
+gdzie v - wierzchołek.
+
+`Cykl (cycle)` - jest to ścieżka, w której początek i koniec są tym samym.
+
+### Graf Eulerowski
+
+`Ścieżka Eulera` - jest to droga, jaka przechodzi przez każdą **krawędź** przynajmniej raz.
+
+`Cykl Eulera` - jest ścieżką Eulera, w której początkowy wierzchołek jest również końcowym.
+
+`Grafem Eulerowskim` jest graf, który zawiera `cykl Eulera`.
+
+Przykład:
+
+![Graf Eulerowski](...)
+
+### Jak wyznaczyć czy graf jest Eulerowskim?
+
+Każdy wierzchołek grafu ma parzysty stopień.
+
+### Graf Hamiltona
+
+`Ścieżka Hamiltona` - jest to droga, jaka przechodzi przez każdy **wierzchołek** przynajmniej raz.
+
+`Cykl Eulera` - jest ścieżką Hamiltona, w której początkowy wierzchołek jest również końcowym.
+
+`Grafem Hamiltona` jest graf, który zawiera cykl Hamiltona.
+
+Przykład:
+
+![Graf Hamiltona](...)
+
+### Jak wyznaczyć czy graf jest Hamiltona?
+
+Niema konkretnej zasady, aby szybko wyznaczyć czy bądź jaki graf jest Hamiltona, ale są dwa sposoby, aby większość określić.
+
+I.
+
+Suma stopni nie sąsiednich wierzchołków jest rowna albo większa od liczby wierzchołków podzieloną przez 2.
+
+`p` - liczba wierzchołków, `v1` i 'v2' - nie sąsiedni wierzchołki.
+
+Jeśli `deg(v1) + deg(v2) ≥ p / 2`, to graf jest Hamiltona.
+
+II.
+
 ...
+
+### Kolorowanie grafów
+
+Kolorowanie to zastosowanie kolorów do wierzchołków tak, aby każdy wierzchołek miał inny kolor niż go sąsiad.

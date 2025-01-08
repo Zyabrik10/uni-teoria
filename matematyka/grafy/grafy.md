@@ -1,89 +1,81 @@
 # Grafy
 
-`Graf` - jest to figura na płaszczyznie, która składa się z wierzchołków i krawędzi.
+`Graf` - figura na płaszczyźnie, która składa się z wierzchołków i krawędzi.
 
-`Wierzchołek` - punkt, należący do figury.
+`Wierzchołek` - punkt należący do figury.
 
-`Krawędź` - linia która łączy dwa wierzchołka.
+`Krawędź` - linia, która łączy dwa wierzchołki.
 
-`Stopień (degree)` - liczba krawędzi wychodzących z (wchodzących do) wierzchołka lub liczba krawędzi grafu incydentnych do wierzchołka.
+`Stopień (degree)` - liczba krawędzi wychodzących z (lub wchodzących do) wierzchołka albo liczba krawędzi grafu incydentnych do wierzchołka.
 
-Matematyczna funkcja, która zwraca stopień wierzchołka: `deg(v)`,
-gdzie v - wierzchołek.
+Matematyczna funkcja, która zwraca stopień wierzchołka: `deg(v)`,  
+gdzie `v` - wierzchołek.
 
-`Cykl (cycle)` - jest to ścieżka, w której początek i koniec są tym samym.
+`Cykl (cycle)` - ścieżka, w której początek i koniec są tym samym.
 
-Matematycznie to zapisują tak:
+Matematycznie zapisujemy to tak:
 
 **G = (V, E)**
 
-- `G` - Graf
-- `V` - zbiór wierzchołków (po ang. vertex)
-- `E` - zbiór krawędzi, każda krawędź jest składana z dwóch wierzchołków (po ang. edge)
+- `G` - graf  
+- `V` - zbiór wierzchołków (ang. vertex)  
+- `E` - zbiór krawędzi, każda krawędź składa się z dwóch wierzchołków (ang. edge)
 
 Przykład:
 
     G = (V = {a, b, c}, E = {ab, bc, ca})
 
-Ogólny graf nazywa się `G`, ale nie jest to wymaganym wszystkie grafy tak nazywać. Jedyna zasada - nazywać z wielkiej litery. (np. A, G1, Graf2, Map, ...)
+
+Ogólny graf nazywa się `G`, ale nie jest to wymagane. Jedyna zasada to nazewnictwo z wielkiej litery (np. `A`, `G1`, `Graf2`, `Map`).
 
 Zapis `V(G)` lub `E(G)` wskazuje nam, że zwraca nam to zbiór *wierzchołków* grafa G lub zbiór *krawędzi* grafa G odpowiednie.
 
-`V(G)` - niepusty, skończony zbiór elementów zwanych wierzchołkami
-(węzłami, punktami)
-
-`E(G)` - skończony zbiór nieuporządkowanych par elementów zbioru V(G)
-zwanych krawędziami.
+- `V(G)` - niepusty, skończony zbiór elementów zwanych wierzchołkami (węzłami, punktami).
+- `E(G)` - skończony zbiór nieuporządkowanych par elementów zbioru `V(G)` zwanych krawędziami.
 
 ## Teoria
 
-Dwa `wierzchołki` grafu są `sąsiednie`, jeżeli istnieje krawędź łącząca je.
+Dwa `wierzchołki` grafu są `sąsiednie`, jeżeli istnieje krawędź łącząca je.  
+Wierzchołki są wówczas `incydentne` z tą krawędzią.  
 
-Wierzchołki są wówczas `incydentne` z tą krawędzią.
+Dwie `krawędzie` grafu są `sąsiednie`, jeżeli mają przynajmniej jeden wspólny wierzchołek.  
 
-Dwie `krawędzie` grafu są `sąsiednie`, jeżeli mają przynajmniej jeden
-wspólny wierzchołek.
+`Stopień wierzchołka` - liczba krawędzi incydentnych z tym wierzchołkiem.
 
-`Stopień wierzchołka` - liczba krawędzi incydentnych z tym
-wierzchołkiem.
+> Licząc stopień wierzchołka, przyjmujemy, że każda pętla jest liczona dwa razy.
 
-> Licząc stopień wierzchołka przyjmujemy, że każda pętla jest liczona dwa razy.
-
-`izolowany` - wierzchołek stopnia zero.
-
-`końcowy` (wiszący)` - wierzchołek stopnia jeden.
+- `Izolowany` - wierzchołek stopnia zero.  
+- `Końcowy` (wiszący) - wierzchołek stopnia jeden.
 
 ![alt text](./img/image-2.png)
 
-...
+---
 
 ## Typy Grafów
 
-`Graf ogólny` - to graf, w którym występują pętli (krawędzi łączących wierzchołki same ze sobą) oraz
-krawędzi wielokrotnych.
+### Graf ogólny
+`Graf ogólny` - graf, w którym występują pętle (krawędzie łączące wierzchołki same ze sobą) oraz krawędzie wielokrotne.
 
 ![alt text](./img/image-1.png)
 
-`Graf prosty` - graf, który nie zawiera pętel i krawędzi wielokrotnych.
+### Graf prosty
+`Graf prosty` - graf, który nie zawiera pętli i krawędzi wielokrotnych.
 
-> Każdy graf prosty jest grafem ogólnym, ale nie każdy graf ogólny jest
-grafem prostym.
+> Każdy graf prosty jest grafem ogólnym, ale nie każdy graf ogólny jest grafem prostym.
 
 ![alt text](./img/image.png)
+
+---
 
 ## Graf pełny
 
 `Graf pełny` - graf prosty, nieskierowany, w którym dla każdej pary węzłów istnieje krawędź je łącząca.
 
-...
-
-<!-- https://pl.wikipedia.org/wiki/Graf_pe%C5%82ny - wikipedia -->
-
 ## Graf Eulerowski
 
-`Ścieżka Eulera` - jest to droga, jaka przechodzi przez każdą **krawędź** przynajmniej raz.
+`Ścieżka Eulera` - droga, która przechodzi przez każdą **krawędź** przynajmniej raz.
 
-`Cykl Eulera` - jest ścieżką Eulera, w której początkowy wierzchołek jest również końcowym.
+`Cykl Eulera` - ścieżka Eulera, w której początkowy wierzchołek jest również końcowym.
 
 `Grafem Eulerowskim` jest graf, który zawiera `cykl Eulera`.
 
@@ -91,7 +83,7 @@ Przykład:
 
 ![Graf Eulerowski](https://eduinf.waw.pl/inf/alg/001_search/images/0134_03.gif)
 
-Cykl Eulera: 
+Cykl Eulera:
 
     3 ➡ 1 ➡ 0 ➡ 3 ➡ 2 ➡ 4 ➡ 3
 

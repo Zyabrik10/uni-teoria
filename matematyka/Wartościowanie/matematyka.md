@@ -69,6 +69,9 @@ W tej metodzie przekształcamy wyraz na tylko alternatywe i koniunkcji. Do tego 
 
 ![alt text](./img/image-9.png)
 
+    !!Uwaga!!
+    ¬p ∨ p = 1 - zawsze
+
 Przykładowy wyraz: `(p → q) → (¬p ∨ q)`
 
 - Cały wielki wyraz, możemy zastąpić na: `¬(p → q) ∨ (¬p ∨ q)` (_zamiana implikacji na alternatywe_)
@@ -81,21 +84,29 @@ Przykładowy wyraz: `(p → q) → (¬p ∨ q)`
 
 - Aby pozbyć się teraz nawiasów w `(p ^ ¬q) ∨ ¬p ∨ q` wykorzystujemy `rozdzielność koniunkcji` (jako mnożenie) (np. `q` pomnożymy na `(p ^ ¬q)`): `((p ∨ q) ^ (¬q ∨ q)) ∨ ¬p` (_rozdzielność koniunkcji_)
 
-- ... : `(p ∨ q) ∨ ¬p` (_rozdzielność koniunkcji_)
+- Opuszczamy nawiasy: `(p ∨ q) ∨ ¬p` (_rozdzielność koniunkcji_)
 
-- ... : `p ∨ q ∨ ¬p` (_rozdzielność koniunkcji_)
+- Przekształcmy wyraz tak, aby zrozumieć czy może on mieć jedynkę: `(p ∨ ¬p) ∨ q` (_rozdzielność koniunkcji_)
 
-- ... : `(p ∨ ¬p) ∨ q` (_rozdzielność koniunkcji_)
-
-Tautologia
+`(p ∨ ¬p)` - zawsze będzie jedynką, co daje dam możliwość stwierdzić, żę `(p ∨ ¬p) ∨ q` też będzie zawszę jedynką, ponieważ alternatywa musi mieć tylko jeden argument 1, aby cały wyraz miał 1. Więc to jest tautologia.
 
 #### Zamiana na arytmetykę
 
-| Wzory |        |
-| ----- | ------ |
-| ¬p    | 1 - p  |
-| p^q   | p \* q |
+![alt text](./img/mat-wzory.png)
+
+    p <=> q = (p → q) ^ (q → p)
 
 Przykładowy wyraz: `(p → q) → (¬p ∨ q)`
 
-...
+Ten wyraz można rozwiązać różnymi sposobami. Preferuję rozbić go na małe części, rozwiązać ich, potem skombinować te małe części, i powtarzać tak do końca.
+
+Założymy że `(p → q)` - `a`,
+a `(¬p ∨ q)` - `b`
+
+    a) p → q = 1 - p + pq;
+    b) ¬p ∨ q = (1 - p) ∨ q = (1 - p) + q - (1 - p) * q;
+    ab) a → b = 1 - (1 - p + pq) + (1 - p + pq)(1 - p + pq) =
+    = 1 - 1 + p - pq + (1 - p + pq - p + p^2 - (p^2)*q + pq - (p^2)*q + (p^2)*q + (p^2)*(q^2)) =
+    = p - pq + 1 - p + pq - p + p - pq + pq - pq + pq + pq = 1
+
+Otrzymaliśmy `1`, co znaczy jest to tautologia.

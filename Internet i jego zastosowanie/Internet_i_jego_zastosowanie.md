@@ -13,7 +13,11 @@
 </Directory>
 ```
 
-`AllowOverride` - służy do przepisywaniu konfiguracji (w plike .htaccess) (może być all none)
+### AllowOverride
+
+Dyrektywa `AllowOverride` określa, jakie ustawienia mogą być nadpisane w plikach `.htaccess`.
+
+Domyślnie w plikach `.htaccess` można definiować różne zasady, ale tylko te, które są dozwolone przez `AllowOverride`.
 
 `Require` - all - znaczy, że każdy użytkownik musi przejść autoryzację, aby otrzymać dostęp do plików w tym katalogu, w przeciwnym przypadku  dostęp jest blokowany (all denied granted)
 

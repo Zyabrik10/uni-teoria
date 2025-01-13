@@ -7,6 +7,17 @@
 `Tautologia` - zdanie zawsze prawdziwe bez względu na kombinacje wartości logicznych zda«
 składowych.
 
+## Wartościowanie słowami 
+
+| Znak | Wartość |
+| ---- | ------- |
+| a → b  | Jeśli a, to b |
+| a ^ b  | i a, i b |
+| a ∨ b  | abo a, abo b |
+| a <=> b  | Jeśli a i tylko a, to b |
+| ¬a  | nie a |
+
+
 ## Metody rachunku zdań
 
 - zero-jedynkowa

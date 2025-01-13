@@ -311,5 +311,112 @@ order by productid, orderid
 
 ... jeszcze będzie informacja
 
+## JOINS
+
+### INNER
+
+```sql
+select buyer_name, s.buyer_id, qty
+from buyers b inner join sales s
+on b.buyer_id = s.buyer_id
+```
+
+```sql
+select buyer_name, prod_name, qty
+from buyers b inner join sales s
+on b.buyer_id = s.buyer_id
+inner join produce p
+on s.prod_id = p.prod_id
+```
+
+### OUTER
+
+```sql
+select buyer_name, s.buyer_id, qty
+from buyers b left outer join sales s
+on b.buyer_id = s.buyer_id
+```
+
+### CROSS
+
+```sql
+select buyer_name, qty
+from buyers cross join sales
+```
+
+### SELF JOIN
+
+```sql
+select a.buyer_id as buyer1, a.prod_id
+,b.buyer_id as buyer2
+from sales as a
+join sales as b
+on a.prod_id = b.prod_id
+where a.buyer_id > b.buyer_id
+```
+
+## Łączenie kilku zbiorów wynikowych — operację na zbiorach
+
+### UNION
+
+```sql
+select firstname + ' ' + lastname as name,city, postalcode
+from employees
+union
+select companyname, city, postalcode
+from customers
+```
+
+### INTERSECT
+
+```sql
+select country from customers
+intersect
+select country from suppliers
+```
+
+### EXCEPT
+
+```sql
+select customerid from orders where year(orderdate) = 1997
+except
+select customerid from orders where year(orderdate) = 1996
+```
+
+## Podzapytania subqueries
+
+W miejscu w którym możemy użyć nazwy tabeli, możemy użyć podzapytania
+
+```sql
+select t.orderid, t.customerid
+from (select orderid, customerid
+from orders) as t
+```
+
+- Podzapytanie zwraca pojedynczą wartość
+- Podzapytanie może być traktowane jako element wyrażenia
+  - może pojawić się na liście polecenia select
+
+  - może się pojawić w warunku
+
+```sql
+select productname, unitprice
+, (select avg(unitprice) from products) as average
+from products;
+```
+
+```sql
+select productname, unitprice
+, (select avg(unitprice) from products) as average
+, unitprice - (select avg(unitprice) from products) as diff
+from products;
+```
 
 
+```sql
+select productname, unitprice
+, (select avg(unitprice) from products) as average
+, unitprice - (select avg(unitprice) from products) as diff
+from products
+where unitprice > (select avg(unitprice) from products)
+```

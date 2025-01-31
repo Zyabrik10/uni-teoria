@@ -132,7 +132,7 @@
 
 ![alt text](image-6.png)
 
-**Odpowiedź: (B), (E)**
+**Odpowiedź: (B)**
 
 ---
 

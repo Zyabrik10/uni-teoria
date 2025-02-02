@@ -4,9 +4,9 @@
 
 **Odpowiedź: (A)(C)**
 
-![alt text](image.png)
+![alt text](./img/todo/image.png)
 
-![alt text](image-1.png)
+![alt text](./img/todo/image-1.png)
 
 # 2
 
@@ -14,9 +14,9 @@
 
 **Odpowiedź: (C)**
 
-![alt text](image-2.png)
+![alt text](./img/todo/image-2.png)
 
-![alt text](image-3.png)
+![alt text](./img/todo/image-3.png)
 
 # 3
 
@@ -36,7 +36,7 @@
     
 **Odpowiedź: (A), (B)**
 
-![alt text](image-4.png)
+![alt text](./img/todo/image-4.png)
 
 # 5
 
@@ -60,7 +60,7 @@
 
 **Odpowiedź: (C)**
 
-![alt text](image-5.png)
+![alt text](./img/todo/image-5.png)
 
 # 8
 
@@ -68,11 +68,11 @@
 
 **Odpowiedź: (A)**
 
-![alt text](image-6.png)
+![alt text](./img/todo/image-6.png)
 
-![alt text](image-7.png)
+![alt text](./img/todo/image-7.png)
 
-![alt text](image-8.png)
+![alt text](./img/todo/image-8.png)
 
 # 9
 
@@ -90,7 +90,9 @@ Mamy x jako zmienną już zdefiniowany w zadaniu, czyli wszystkie odpowiedzi, w 
 
 a) Terminem nazywa się zmienna, constanta lub funkcja zastosowana do innych terminów. P jest predykatem, który formuję wzór, który może być fałszem lub prawdą.
 
-![alt text](image-9.png)
+
+
+![alt text](./img/todo/image-9.png)
 
 # 11
 
@@ -102,7 +104,7 @@ a) Terminem nazywa się zmienna, constanta lub funkcja zastosowana do innych ter
 
 ![alt text](./img/tasks/image-11.png)
 
-**Odpowiedź: (B)**
+**Odpowiedź: (A)?**
 
 Ciąg złożony z 1, 2, 3;
 
@@ -116,6 +118,8 @@ n\*n\*n = n^3
 
 Kombinacja - kiedy porządek ne jest potrzebny. [C]
 Wariacja - kiedy porządek jest potrzebny. [A]
+
+W naszym przypadku to [A], ponieważ mamy gradację premii. Gdyby było po prostu premia bez różnej wysokości, było by [C].
 
 # 14
 
@@ -148,9 +152,7 @@ I takim sposobem potrzebujemy tylko wybrać 5 kulek z 7 elementów.
 
 ![alt text](./img/tasks/image-14.png)
 
-**Odpowiedź: (B)?**
-
-Najpierw wybieramy mężczyznę i do niego wybieramy wybieramy z
+**Odpowiedź: (B)(C)**
 
 # 16
 
@@ -164,7 +166,7 @@ Najpierw wybieramy mężczyznę i do niego wybieramy wybieramy z
 
 **Odpowiedź: (B)**
 
-Podstawimy n = 1, n = 0 we wszystkie wzory. Musimy otrzymać wartość a0, a1. Gdy znajdziemy taki wzór, jest to nasz szukany wzór
+Podstawimy n = 1, n = 0 we wszystkie wzory. Po podstawieniu musimy otrzymać wartość a0, a1. Gdy znajdziemy taki wzór, jest to nasz szukany wzór.
 
 # 18
 
@@ -190,7 +192,33 @@ Graf dwudzielny jest grafem, którego wierzchołki były rozdzielone na dwa zbio
 
 ![alt text](./img/tasks/image-20.png)
 
-**Odpowiedź: (B)?**
+**Odpowiedź: (B)**
+
+      [0 1 1 1]
+      [1 0 1 0]
+      [1 1 0 1] = A - macierz sąsiedztwa
+      [1 0 1 0]
+
+      [3 0 0 0]
+      [0 2 0 0]
+      [0 0 3 0] = D - macierz stopni wierzchołków
+      [0 0 0 2]
+
+      [3 -1 -1 -1]
+      [-1 2 -1  0]
+      [-1 -1 3 -1] = (D-A) - Macierz Laplace'a 𝐿
+      [-1 0 -1  2]
+
+      [2 -1  0]
+      [-1 3 -1] = M
+      [0 -1  2]
+
+      2[3 -1] - (-1)[-1 -1] + 0[-1 3]
+      [-1 2]       [0   2]    [0 -1] = det(M) = 8
+
+      2(3*2 - (-1\*-1)) + (-1\*2 - 0\*(-1)) + 0 =
+      = 2 * 5 - 2 = 8
+           
 
 # 22
 
@@ -198,8 +226,16 @@ Graf dwudzielny jest grafem, którego wierzchołki były rozdzielone na dwa zbio
 
 **Odpowiedź: (C)**
 
+![alt text](image.png)
+
 # 23
 
 ![alt text](./img/tasks/image-22.png)
 
-**Odpowiedź: (A), (B)?**
+**Odpowiedź: (A)**
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
+
+![alt text](image-3.png)

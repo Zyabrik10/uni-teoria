@@ -143,7 +143,7 @@ I takim sposobem potrzebujemy tylko wybrać 5 kulek z 7 elementów.
       ● ● ● ● ● | |
       ^ ^   ^   ^ ^
       | |   |   | |
-
+      1 2   3   4 5 - kolejność ważna
             |
             v
 ●●●|| - 3 w pierwszym pudełku, a wszystkie pozostałe są puste.

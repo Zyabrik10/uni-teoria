@@ -152,7 +152,7 @@ I takim sposobem potrzebujemy tylko wybrać 5 kulek z 7 elementów.
 
 ![alt text](./img/tasks/image-14.png)
 
-**Odpowiedź: (B)(C)**
+**Odpowiedź: (C)**
 
 # 16
 

@@ -226,7 +226,7 @@ Graf dwudzielny jest grafem, którego wierzchołki były rozdzielone na dwa zbio
 
 **Odpowiedź: (C)**
 
-![alt text](image.png)
+![alt text](./img/tasks/image.png)
 
 # 23
 
@@ -234,8 +234,8 @@ Graf dwudzielny jest grafem, którego wierzchołki były rozdzielone na dwa zbio
 
 **Odpowiedź: (A)**
 
-![alt text](image-1.png)
+![alt text](./img/tasks/image-1.png)
 
-![alt text](image-2.png)
+![alt text](./img/tasks/image-2.png)
 
-![alt text](image-3.png)
+![alt text](./img/tasks/image-3.png)

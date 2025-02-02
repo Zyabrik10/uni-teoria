@@ -140,12 +140,12 @@ I takim sposobem potrzebujemy tylko wybrać 5 kulek z 7 elementów.
 ( p + k - 1 ) - Odpowiedź
 (     p     )
 
-● ● ● ● ● | |
-^ ^   ^   ^ ^
-| |   |   | |
+      ● ● ● ● ● | |
+      ^ ^   ^   ^ ^
+      | |   |   | |
 
-      |
-      v
+            |
+            v
 ●●●|| - 3 w pierwszym pudełku, a wszystkie pozostałe są puste.
 
 # 15

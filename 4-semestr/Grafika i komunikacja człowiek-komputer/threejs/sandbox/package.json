@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "build": "parcel build ./src/index.html",
+    "start": "parcel ./src/index.html"
+  },
+  "dependencies": {
+    "parcel": "^2.13.3",
+    "three": "^0.173.0"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3"
+  }
+}

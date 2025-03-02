@@ -1,13 +1,17 @@
 {
+  "name": "sandbox",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "build": "parcel build ./src/index.html",
-    "start": "parcel ./src/index.html"
-  },
-  "dependencies": {
-    "parcel": "^2.13.3",
-    "three": "^0.173.0"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "buffer": "^6.0.3"
+    "vite": "^6.2.0"
+  },
+  "dependencies": {
+    "three": "^0.174.0"
   }
 }

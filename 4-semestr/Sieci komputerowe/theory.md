@@ -10,7 +10,7 @@ There are two types of such cables:
 
 1) `UTP` [unshielded twisted pair] - common type of cable that is used today.
 
-![alt text](./img/image.png)
+    ![alt text](./img/image.png)
 
 It consists of 4 pairs of colored-coded wires twisted around each other.
 
@@ -18,7 +18,7 @@ The wire are twisted to prevent electromagnetic interference.
 
 2) `STP` [shielded twisted pair] - it is much the same thing as `UTP`, but it has a `foil shield` that covers the wires.
 
-![alt text](./img/image-1.png)
+    ![alt text](./img/image-1.png)
 
 The foil shield adds a layer of protection against electromagnetic interference leaking into and out of the cables.
 
@@ -36,11 +36,11 @@ The most common types of twisted pair cables that are used today a LAN:
 
 1) `Straight(patch) cable` - when both ends of a cable are wired using __the same__ standard. For example: both ends are `T568A`. The most common type of ethernet cable that's used on a LAN. They are used tto connect computer with hubs, switches, routers, or modems. `Connects dissimilar devices together`. .
 
-![alt text](./img/image-4.png)
+    ![alt text](./img/image-4.png)
 
 1) `Crossover cable` - when both ends of a cable are wired using two different standards. For example: one ends `T568A` and other one `T568B`. They are used to connect two similar devices together. For example: two computers
 
-![alt text](./img/image-5.png)
+    ![alt text](./img/image-5.png)
 
 ## Categories (CAT)
 
@@ -48,7 +48,7 @@ Those wires can be different categories and differ from each other by speed. Cat
 
 ![alt text](./img/image-6.png)
 
-There are also category 8, its speed 40Gbps.
+> There are also category 8, its speed 40Gbps.
 
 # Światłowód
 

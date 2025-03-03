@@ -170,8 +170,8 @@ Generalnie zakłócenia ingerujące w układ bez względu skąd pochodzą dzieli
 
 Podział jest dokonywany ze względu na czas trwania impulsów zakłócających. Różnicą jest granica będąca średnim czasem propagacji sygnału przez funktor logiczny czyli bramkę.
 
-- Zakłócenia statyczne to takie których czas trwania jest mniejszy od czasu propagacji sygnału przez bramkę
-  -Zakłócenia dynamiczne to takie gdzie relacja pomiędzy czasami jest akurat odwrotna
+- Zakłócenia statyczne to takie których czas trwania jest mniejszy od czasu propagacji sygnału przez bramkę.
+- Zakłócenia dynamiczne to takie gdzie relacja pomiędzy czasami jest akurat odwrotna.
 
 ## 4. Obciążalność układu
 

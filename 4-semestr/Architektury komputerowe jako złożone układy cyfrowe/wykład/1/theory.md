@@ -7,9 +7,9 @@
 ## Ważne prawa de Morgan'a pokazujące związki pomiędzy sumowaniem i mnożeniem logicznym
 
 - ~(A + B) = ~A \* ~B
-- ~(A + B + C + ...) = ~A _ ~B _ ~C \* ...
+- ~(A + B + C + ...) = ~A \* ~B \* ~C \* ...
 - ~(A \* B) = ~A + ~B
-- ~(A _ B _ C \* ...) = ~A + ~B + ~C + ...
+- ~(A \* B \* C \* ...) = ~A + ~B + ~C + ...
 
 ## Podstawy techniki cyfrowej
 
@@ -205,7 +205,7 @@ Wynika to z różnych charakterystyk tych dwóch elementów czyli zależności �
 
 ---
 
-Suma logiczna - OR, LUB `Y = A  + B`
+Suma logiczna - OR, LUB `Y = A + B`
 
 | A   | B   | Y   |
 | --- | --- | --- |
@@ -289,21 +289,21 @@ Suma modulo - XOR, EXCLUSIVE-OR, WYŁACZNIE-LUB 𝒀=𝑨⊕𝑩
 
    - Funkcja przedstawiona na zerach i jedynkach
 
-     X = (0 _ 1 _ 1) + (1 _ 0 _ 1) + (1 _ 1 _ 0)
+     X = (0 \* 1 \* 1) + (1 \* 0 \* 1) + (1 \* 1 \* 0)
 
    - Funkcja przedstawiona na symbolach zmiennych
 
-     X = (~A _ B _ C) + (A _ ~B _ C) + (A _ B _ ~C)
+     X = (~A \* B \* C) + (A \* ~B \* C) + (A \* B \* ~C)
 
 2. `POS (Products of Sum)` - iloczyn sum, gdy na wyjściu jest **0**.
 
    - Funkcja przedstawiona na zerach i jedynkach
 
-     X = (0 + 0 + 0) _ (0 + 0 + ~1) _ (0 + ~1 + ~1) _ (~1 + 0 + 0) _ (~1 + ~1 + ~1)
+     X = (0 + 0 + 0) \* (0 + 0 + ~1) \* (0 + ~1 + ~1) \* (~1 + 0 + 0) \* (~1 + ~1 + ~1)
 
    - Funkcja przedstawiona na symbolach zmiennych
 
-     X = (A + B + C) _ (A + B + ~C) _ (A + ~B + ~C) _ (~A + B + C) _ (~A + ~B + ~C)
+     X = (A + B + C) \* (A + B + ~C) \* (A + ~B + ~C) \* (~A + B + C) \* (~A + ~B + ~C)
 
 # Przykład zastąpienia schematu prostszym układem
 
@@ -371,7 +371,7 @@ Ostatecznie przykładowa funkcja zapisana w postaci kanonicznej będzie miała p
 
      𝑌 = 𝐴𝐵𝐶𝐷 + 𝐴𝐵𝐶~𝐷 + ~𝐴~𝐵~𝐶𝐷 + ~𝐴~𝐵~𝐶~𝐷 + ~𝐴𝐵𝐶𝐷 + ~𝐴~𝐵𝐶𝐷 + 𝐴~𝐵𝐶𝐷 + 𝐴~𝐵𝐶~𝐷 + 𝐴𝐵~𝐶~𝐷 + 𝐴~𝐵~𝐶~𝐷 + 𝐴~𝐵~𝐶𝐷
 
-| CD/AB | 00  | 01  | 11  | 10  |
+| AB\CD | 00  | 01  | 11  | 10  |
 | ----- | --- | --- | --- | --- |
 | 00    |  1  |  1  |  1  |  0  |
 | 01    |  0  |  0  |  1  |  0  |

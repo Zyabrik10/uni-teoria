@@ -2,7 +2,7 @@
 
 ## Bramki logiczne
 
-![alt text](./img/image-15.png)
+![alt text](../img/image-15.png)
 
 ## Ważne prawa de Morgan'a pokazujące związki pomiędzy sumowaniem i mnożeniem logicznym
 
@@ -20,19 +20,19 @@
 
 `Wielowrotnik` (ang. multiport element)` - wielozaciskowy element układu elektrycznego, którego zaciski wyprowadzone na zewnątrz można pogrupować w pary zwane wrotami.
 
-![alt text](./img/image-10.png)
+![alt text](../img/image-10.png)
 
 # Układy logiczne
 
 `Układy logiczne` to dział techniki cyfrowe w której układy cyfrowe są konstruowane na poziomie bramek logicznych i przerzutników. Wszystkie układy cyfrowe dzielą się na dwie grupy
 
-![alt text](./img/image-9.png)
+![alt text](../img/image-9.png)
 
 ## Układy kombinacyjne
 
 Stan wyjścia Y układu cyfrowego w danym momencie czasowym zależy ściśle od stanów jego wejść A,B,C.
 
-![alt text](./img/image-11.png)
+![alt text](../img/image-11.png)
 
 ## Układy sekwencyjne
 
@@ -40,22 +40,22 @@ Stan wyjść Q w danym momencie czasowym zależy od aktualnego stanu wejść P o
 Moment czasowy wyznacza zegar doprowadzony do wejścia X.
 Najogólniej można powiedzieć że układy sekwencyjne to takie które mają doprowadzony zegar CLK.
 
-![alt text](./img/image-3-1.png)
+![alt text](../img/image-3-1.png)
 
 ## Liczenie binarne
 
 Kazdą liczbę całkowitą można przedstawić w postaci kodu naturalnego jako słowo postaci:
 
-![alt text](./img/image-4.png)
+![alt text](../img/image-4.png)
 
 gdzie `a` jest jest znakiem kodu, `p` podstawą kodu
 
 Liczba binarna zostanie więc przedstawiona jako:  
-![alt text](./img/image.png)
+![alt text](../img/image.png)
 
 Czyli liczba dziesiętna np. 100 będzie przedstawiona binarnie jako:
 
-![alt text](./img/image-1.png)
+![alt text](../img/image-1.png)
 
 ## Zasady
 
@@ -67,7 +67,7 @@ Czyli liczba dziesiętna np. 100 będzie przedstawiona binarnie jako:
 
 ## Wzór Shannon
 
-![alt text](./img/image-12.png)
+![alt text](../img/image-12.png)
 
 `Iloczyn n zmiennych` - jest wyrazem bądź `termem` iloczynowym `n` literałów.
 
@@ -79,7 +79,7 @@ Czyli liczba dziesiętna np. 100 będzie przedstawiona binarnie jako:
 
 ---
 
-![alt text](./img/image-13.png)
+![alt text](../img/image-13.png)
 
 Między obydwoma zasadami obowiązuje zasada równoważności form: dla każdej kanonicznej formy sumacyjnej można określić równoważną kanoniczną formę iloczynową.
 
@@ -129,13 +129,13 @@ Obowiązuje następująca kolejność operacji:
 
 ## Sygnał cyfrowy
 
-![alt text](./img/image-14.png)
+![alt text](../img/image-14.png)
 
 Sygnały cyfrowe: a) okresowe i b) nieokresowe
 
 ## Kształt rzeczywistego sygnału cyfrowego
 
-![alt text](./img/image-10-1.png)
+![alt text](../img/image-10-1.png)
 
 Elementy charakterystyczne kształtu impulsu
 
@@ -145,9 +145,9 @@ Elementy charakterystyczne kształtu impulsu
 
 Miarą szybkości jest czas propagacji (średni) - Tp.
 
-![wzór](./img/wzór-1.png)
+![wzór](../img/wzór-1.png)
 
-![alt text](./img/prz1-1.png)
+![alt text](../img/prz1-1.png)
 
 ## 2. Moc rozpraszana w układzie
 
@@ -157,7 +157,7 @@ Moc rozpraszana w układzie dla prądu stałego jest liczona wg. prostej formuł
 
 Dla prądu przemiennego w czasie formuła jest następująca:
 
-![alt text](./img/image-12-1.png)
+![alt text](../img/image-12-1.png)
 
 gdzie: 𝑖_𝑐𝑐 (𝑡) jest prądem czerpanym ze źródła zasilania w ciągu okresu T
 
@@ -177,7 +177,7 @@ Podział jest dokonywany ze względu na czas trwania impulsów zakłócających.
 
 Obciążalność wyjściowa układu wyrażona n ilością układów tej samej serii/rodziny jaka może być dołączona do wyjścia tego układu:
 
-![alt text](./img/image-13-1.png)
+![alt text](../img/image-13-1.png)
 
 Bardzo często parametr ten jest nazywany Fenautem
 
@@ -195,13 +195,13 @@ Jest to układ który działa według następującej tabeli prawdy:
 | 0   | 0   |
 | 1   | 1   |
 
-![alt text](./img/image-2.png)
+![alt text](../img/image-2.png)
 
 Ponieważ symbol jest taki sam jak w układach analogowych wzmacniacza sygnału trzeba tutaj pokazać istotną różnicę istniejącą między obydwoma układami.
 Wzmacniacz jest układem liniowym a bufor nieliniowym.
 Wynika to z różnych charakterystyk tych dwóch elementów czyli zależności 𝑈*𝑤𝑦 𝑜𝑑 𝑈*𝑤𝑒. Przedstawiają to dwa rysunki poniżej:
 
-![alt text](./img/image-16-1.png)
+![alt text](../img/image-16-1.png)
 
 ---
 
@@ -214,7 +214,7 @@ Suma logiczna - OR, LUB `Y = A  + B`
 | 1   | 0   | 1   |
 | 1   | 1   | 1   |
 
-![alt text](./img/image-3.png)
+![alt text](../img/image-3.png)
 
 ---
 
@@ -225,7 +225,7 @@ Negacja - NOT, NIE - Inverter, negator 𝒀=~𝑨
 | 0   | 1   |
 | 1   | 0   |
 
-![alt text](./img/image-8.png)
+![alt text](../img/image-8.png)
 
 Symbole według trzech standardów. Najpopularniejszy standard to ANSI.
 
@@ -240,7 +240,7 @@ Suma logiczna zanegowana (Negacja sumy logicznej) NOR, LUB-NIE 𝒀=~(𝑨 + �
 | 1   | 0   | 0   |
 | 1   | 1   | 0   |
 
-![alt text](./img/image-5.png)
+![alt text](../img/image-5.png)
 
 ---
 
@@ -253,7 +253,7 @@ Iloczyn logiczny - AND, I 𝒀=𝑨⋅𝑩
 | 1   | 0   | 0   |
 | 1   | 1   | 1   |
 
-![alt text](./img/image-20-1.png)
+![alt text](../img/image-20-1.png)
 
 ---
 
@@ -266,7 +266,7 @@ Iloczyn logiczny zanegowany (Negacja iloczynu logicznego) - NAND, I-NIE
 | 1   | 0   | 1   |
 | 1   | 1   | 0   |
 
-![alt text](./img/image-6.png)
+![alt text](../img/image-6.png)
 
 ---
 
@@ -279,11 +279,11 @@ Suma modulo - XOR, EXCLUSIVE-OR, WYŁACZNIE-LUB 𝒀=𝑨⊕𝑩
 | 1   | 0   | 1   |
 | 1   | 1   | 0   |
 
-![alt text](./img/image-7.png)
+![alt text](../img/image-7.png)
 
 ## Funkcja mieszana składająca się z iloczynów oraz sum trzech zmiennych ABC
 
-![alt text](./img/tab-1.png)
+![alt text](../img/tab-1.png)
 
 1. `SOP (Sum of Products)` - sumy iloczynów, to przypadki, gdy na wyjściu jest **1**.
 
@@ -309,26 +309,26 @@ Suma modulo - XOR, EXCLUSIVE-OR, WYŁACZNIE-LUB 𝒀=𝑨⊕𝑩
 
 Powiedzmy że mamy następujący schemat i powstał problem czy nie da się tego schematu zastąpić prostszym układem.
 
-![alt text](./img/prz1.png)
+![alt text](../img/prz1.png)
 
 Matematyczny wygląd:
 
-![alt text](./img/prz2.png)
+![alt text](../img/prz2.png)
 
 Można tą funkcję przekształcić do najprostszej postaci stosując reguły algebry Boole'a oraz przekształcenia de'Morgana:
 
-![alt text](./img/prz3.png)
+![alt text](../img/prz3.png)
 
 Nowy schemat:
 
-![alt text](./img/prz4.png)
+![alt text](../img/prz4.png)
 
 ## Upraszczanie funkcji metodą tablic Karnaugh'a
 
 1. Należy utworzyć tabelę podzielona na pola w ilości równej n zmiennych `w potędze 2`.
 2. Czyli tabela dla czterech zmiennych ABCD będzie następująca
 
-![alt text](./img/prz5.png)
+![alt text](../img/prz5.png)
 
 3. Ułożenie zmiennych może być dowolnie zadane, w naszym przypadku zrobiono to tak jak to jest zapisane w funkcji którą mamy uprościć czyli po kolei ABCD.
 
@@ -347,7 +347,7 @@ To co wcześniej zostało opisane jako upraszczanie określonego wyrażenie dale
 
 Należy doprowadzić do najprostszej postaci następującą funkcję:
 
-![alt text](./img/prz6.png)
+![alt text](../img/prz6.png)
 
      𝑌 = 𝐴𝐵𝐶 + ~𝐴~𝐵~𝐶 + ~𝐴𝐶𝐷 + 𝐵𝐶𝐷 + 𝐴~𝐵𝐶 + 𝐴~𝐶~𝐷 + ~𝐵~𝐶𝐷 + 𝐴~𝐵~𝐷
 
@@ -379,4 +379,4 @@ Ostatecznie przykładowa funkcja zapisana w postaci kanonicznej będzie miała p
 | 10    |  1  |  1  |  1  |  1  |
 
 
-![alt text](./img/prz7.png)
+![alt text](../img/prz7.png)

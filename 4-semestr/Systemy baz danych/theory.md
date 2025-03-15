@@ -3,7 +3,7 @@
 # Create table
 
 ```sql
-CREATE TABLE mazurok.dbo.[User] (
+CREATE TABLE dbo.[User] (
    id_user INT IDENTITY(1,1) NOT NULL,
    username VARCHAR(50) NULL,
    email NVARCHAR(100) NOT NULL,
@@ -11,6 +11,35 @@ CREATE TABLE mazurok.dbo.[User] (
    CONSTRAINT PK_User PRIMARY KEY (id_user),
    CONSTRAINT UQ_Users_Email UNIQUE (email)
 );
+```
+
+```sql
+CREATE TABLE dbo.[User] (
+   id_user INT IDENTITY(1,1) NOT NULL CONSTRAINT PK_User PRIMARY KEY,
+   username VARCHAR(50) NULL,
+   email NVARCHAR(100) NOT NULL CONSTRAINT UQ_Users_Email UNIQUE,
+   password NVARCHAR(255) NOT NULL,
+);
+```
+
+```sql
+create table dbo.shippers  
+(  
+    shipperid int identity
+        constraint pk_shippers  
+            primary key,
+    companyname nvarchar(40) not null,  
+    phone nvarchar(24)  
+)
+```
+
+```sql
+create table dbo.newshippers  
+(  
+    shipperid int identity,  
+    companyname nvarchar(40) not null,  
+    phone nvarchar(24)  
+)
 ```
 
 `Defining order is important.`
@@ -32,7 +61,7 @@ Table name should have -s on the end like: Users, Customers, Orders
 # Drop table
 
 ```sql
-drop table mazurok.dbo.[Users];
+drop table dbo.[Users];
 ```
 
 # Transaction
@@ -84,6 +113,19 @@ END CATCH;
 
 If the first `UPDATE` succeeds but the second fails, the transaction `ROLLBACK` will roll back and undone the partial update, keeping data consistent.
 
+# Identity
+
+```sql
+select @@identity; 
+select scope_identity()
+```
+
+```sql
+DBCC CHECKIDENT ('shippers'); 
+SELECT IDENT_CURRENT( 'shippers')
+DBCC CHECKIDENT ('shippers', RESEED, 3);
+```
+
 # Insert
 
 ```sql
@@ -95,6 +137,42 @@ values ('PECOF', 'Pecos Coffee Company', 'Michael Dunn','Owner',
         '(604) 555-3392' ,'(604) 555-7293');
 ```
 
+```sql
+insert shippers (companyname, phone)  
+select companyname, phone from suppliers;
+```
+
+```sql
+select supplierid as shipperid, companyname, phone  
+into newshippers
+from suppliers;
+```
+
+```sql
+insert shippers (companyname, phone) 
+values ('Taxi1', '911')
+       (null, '911');
+```
+
+```sql
+begin try  
+   begin transaction  
+  
+   insert shippers (companyname, phone)  
+   values ('Taxi1', '911');  
+  
+   insert shippers (companyname, phone)  
+   values (null, '912');  
+  
+   commit  
+end try  
+begin catch  
+    if @@trancount > 0
+      rollback;    
+    throw;  
+end catch
+```
+
 # UPDATE
 
 ```sql
@@ -104,9 +182,54 @@ set phone = '12 423 512',
 where supplierid = 2;
 ```
 
+```sql
+update products  
+set unitprice = unitprice * 1.15  
+where categoryid = 2;
+```
+
+```sql
+update products  
+set unitprice = unitprice + 2  
+where supplierid in (  
+                      select supplierid  
+                       from suppliers  
+                       where country = 'USA'  
+                     );
+```
+
+```sql
+update products  
+set unitprice = unitprice - 10  
+where unitprice > (select avg(unitprice) from products);
+
+update products  
+set unitprice = unitprice - 10  
+where unitprice > (select avg(unitprice) from products p2 
+                   where p2.categoryid = products.categoryid);
+```
+
 # DELETE
 
 ```sql
 delete shippers  
 where companyname = 'Fitch & Mather';
+
+delete shippers  
+where shipperid = 4;
+
+select * from orders  
+where datediff(month, shippeddate, getdate()) >= 6;
+```
+
+
+```sql
+delete [order details]  
+where orderid in (  
+      select orderid from orders  
+      where datediff(month, shippeddate, getdate()) >= 6  
+);
+
+delete from orders  
+where datediff(month, shippeddate, getdate()) >= 6;
 ```

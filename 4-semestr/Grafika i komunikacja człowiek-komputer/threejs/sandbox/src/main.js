@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/Addons.js";
 import { randFloat } from "three/src/math/MathUtils.js";
 
 const scene = new THREE.Scene();
@@ -13,13 +14,19 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-// camera.position.y = 30;
-// camera.position.z = 30;
-// camera.position.x = -50;
+const controls = new OrbitControls(camera, renderer.domElement);
 
-// camera.lookAt(30, -20, 0);
+camera.position.y = 30;
+camera.position.z = 30;
+camera.position.x = -50;
+
+camera.lookAt(30, -20, 0);
+
+controls.update();
 
 renderer.render(scene, camera);
+
+
 
 function initCubes() {
   const n = 100;
@@ -78,13 +85,8 @@ function initCubes() {
 }
 
 initCubes();
-console.log(scene.children)
 
 function animate() {
-  camera.rotation.y += 0.001;
-  camera.rotation.z += 0.001;
-  camera.rotation.x += 0.001;
-
   scene.children.forEach((cube) => {
     switch (cube.ax) {
       case "x":

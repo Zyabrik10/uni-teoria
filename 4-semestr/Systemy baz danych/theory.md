@@ -176,6 +176,12 @@ end catch
 # UPDATE
 
 ```sql
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+```
+
+```sql
 update suppliers  
 set phone = '12 423 512',  
     fax = '12 423 512'  
@@ -232,4 +238,112 @@ where orderid in (
 
 delete from orders  
 where datediff(month, shippeddate, getdate()) >= 6;
+```
+
+# VIEW
+
+`VIEW` is a virtual table. That means this table is not a table itself but a saved `select` action on table.
+
+It helps you to reuse resulted table based on you `select` action.
+
+```sql
+create view _usa_users
+as select * from [User] where Country = 'Ukraine'
+```
+
+Now if we want to get users in Ukraine, all we need to do is to get it from `view` and not to create `select` query from scratch.
+
+```sql
+select * from _usa_users
+```
+
+## UPDATE VIEW
+
+In MSSQL:
+
+```sql
+create or alter view _usa_users
+as 
+select * from [User] 
+where Country = 'Ukraine'
+and id = 1
+
+alter view _usa_users
+as 
+select * from [User] 
+where Country = 'Ukraine'
+and id = 1
+```
+
+---
+
+In SQL:
+
+```sql
+create or replace view _usa_users
+as 
+select * from [User] 
+where Country = 'Ukraine'
+and id = 1
+```
+
+## DROP VIEW
+
+```sql
+drop view view_name;
+```
+
+```sql
+drop view [User];
+```
+
+# PROCEDURE
+
+Live example:
+
+```SQL
+create or alter proc _change_users_country
+@fromCountry char(50),
+@toCountry char(50)
+as  
+begin  
+    if not exists (select * from [User] where Country = @fromCountry)  
+       throw 50001, 'No user with such country', 1  
+  
+    begin tran
+    
+    begin try
+    	update [User]
+    	set Country = @toCountry
+    	where Country = @fromCountry
+    
+    	commit
+    end try
+    begin catch
+    	print ERROR_MESSAGE()
+    	rollback
+    end catch
+end
+
+
+exec _change_users_country 'China', 'Ukraine'
+```
+
+```sql
+CREATE PROCEDURE procedure_name
+AS
+sql_statement
+GO;
+```
+
+# FUNCTION
+
+```sql
+create function f_customer_order_total (@customerid char(5))  
+returns table  
+as return (  
+    select orderid, orderdate, customerid, total  
+    from vw_order_total_3  
+    where customerid = @customerid
+)
 ```

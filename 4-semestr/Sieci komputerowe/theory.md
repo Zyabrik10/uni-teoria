@@ -315,3 +315,56 @@ Those wires can be different categories and differ from each other by speed. Cat
     - Підтримують мікросергментацію (один хост на порт).
 
     - Використовують технологію cut-through для швидшої передачі даних.
+
+---
+
+# ISO Model
+
+This is abstract network model for communication and developing network protocols. All stages are splitted by `layers`(`warstwy` po polsku, `рівні` українською)
+
+![alt text](./img/model_osi.png)
+
+---
+
+# IPv4
+
+Link: [Wikipedia about IPv4](https://pl.wikipedia.org/wiki/IPv4)
+
+![alt text](IPv4.png)
+
+- `wersja` - pole opisujące wersję protokołu, jednoznacznie definiujące format nagłówka.
+
+- `Długość nagłówka (4 bity)` - (ang. Internet Header Length) długość nagłówka IP wyrażona w 32-bitowych słowach; minimalny, poprawny nagłówek ma długość co najmniej 5.
+
+- `Usługi zróżnicowane i ECN`, dawniej `Typ usługi (8 bitów)` - pole wskazujące jaka jest pożądana wartość `QoS` dla danych przesyłanych w pakiecie. Na podstawie tego pola, routery ustawiają odpowiednie wartości transmisji.
+
+    Usługi zróżnicowane (ang. Differentiated Services, 6 bitów) oraz ECN (ang. Explicit Congestion Notification, 2 bity). 
+    
+    Pierwsze trzy bity pola Usługi zróżnicowane informują o priorytecie (gdzie 111 to najwyższy, przeznaczony do sterowania siecią, a 000 - zwyczajny priorytet). 
+    
+    Kolejne trzy bity, oznaczone: 
+    
+    - `D` - małe opóźnienie (ang. delay), 
+    - `T` - duża przepustowość (ang. throughput)
+    - `R` - wysoka niezawodność (ang. reliability), ustawione na wartość 1, oznaczają, że dla danego pakietu szczególnie ważny jest dany parametr. Bity pola ECN ustawione na wartość 1 informują o przeciążeniu bufora.
+
+    `Quality of service (QoS)` - jakość usługi, zgodnie z zaleceniem ITU-T E.800, całość charakterystyk usługi telekomunikacyjnej stanowiących podstawę do wypełnienia wyrażonych i zaspokajanych potrzeb użytkownika tej usługi.
+
+- `Całkowita długość pakietu (16 bitów)` - (ang. Total Length) długość całego datagramu IP (nagłówek oraz dane); maksymalna długość datagramu wynosi 216 - 1 = 65535. Minimalna wielkość datagramu jaką musi obsłużyć każdy host wynosi 576 bajtów, dłuższe pakiety mogą być dzielone na mniejsze (fragmentacja).
+
+- `Numer identyfikacyjny (16 bitów)` - (ang. Identification) numer identyfikacyjny, wykorzystywany podczas fragmentacji do określenia przynależności pofragmentowanych datagramów
+
+- `Flagi (3 bity)` - (ang. Flag) flagi wykorzystywane podczas fragmentacji datagramów. Zawierają dwa używane pola: DF, które wskazuje, czy pakiet może być fragmentowany oraz MF, które wskazuje, czy za danym datagramem znajdują się kolejne fragmenty.
+
+- `Przesunięcie (13 bitów)` - (ang. Fragment Offset) w przypadku fragmentu większego datagramu pole to określa miejsce danych w oryginalnym datagramie; wyrażone w jednostkach ośmioaktowych
+
+- `Czas życia (8 bitów)` - (ang. Time to live) czas życia datagramu. Zgodnie ze standardem liczba przeskoków przez jaką datagram znajduje się w obiegu. Jest zmniejszana za każdym razem, gdy datagram jest przetwarzany w routerze - jeżeli czas przetwarzania jest równy 0, datagram jest usuwany z sieci (nie przekazywany dalej) o czym nadawca usuniętego pakietu jest informowany zwrotnie z wykorzystaniem protokołu ICMP. Istnienie tej wartości jest konieczne, zapobiega krążeniu pakietów (patrz Burza broadcastowa) w sieci.
+
+- `Protokół warstwy wyższej (8 bitów)` - (ang. Protocol) informacja o protokole warstwy wyższej, który jest przenoszony w polu danych datagramu IP.
+
+- `Suma kontrolna nagłówka (16 bitów)` - (ang. Header Checksum) suma kontrolna nagłówka pakietu, pozwalająca stwierdzić czy został on poprawnie przesłany, sprawdzana i aktualizowana przy każdym przetwarzaniu nagłówka.
+
+- `Adres źródłowy (32 bity) i adres docelowy (32 bity)` - (ang. Source/Destination IP Address) pola adresów nadawcy i odbiorcy datagramu IP.
+
+- `Opcje (32 bity)` - (ang. Options) niewymagane pole opcji, opisujące dodatkowe zachowanie pakietów IP
+Wypełnienie - (ang. Padding) - opcjonalne pole wypełniające nagłówek tak, aby jego wielkość była wielokrotnością 32, wypełnione zerami.

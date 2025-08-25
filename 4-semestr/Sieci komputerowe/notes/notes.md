@@ -15,6 +15,8 @@ There are two main models of Computer Network: [**OSI/ISO**](https://en.wikipedi
 | [**ANSI**](https://en.wikipedia.org/wiki/American_National_Standards_Institute)             | American National Standards Institute                                                                                                       |
 | [**ITU-T**](https://en.wikipedia.org/wiki/ITU-T)                                            | International Telecommunication Union Telecommunication Standardization Sector ([X.509](https://en.wikipedia.org/wiki/X.509) - **TLS/SSL**) |
 
+---
+
 **RFC** - request for comments ([rfc-editor](https://www.rfc-editor.org/)):
 
 - The official document that describes The Network Standards.
@@ -23,12 +25,18 @@ There are two main models of Computer Network: [**OSI/ISO**](https://en.wikipedi
 - Numbering: from 1 to ... (e.g. RFC 1, RFC 3550, RFC 7465).
 - Next versions cancel previous versions.
 
+---
+
 [**Protocol**](https://www.techtarget.com/searchnetworking/definition/protocol) - {syntaxes, exchange rules}. A network protocol is a set of established rules that specify how to format, send...
 
 - All layers are independent from others.
 - All layers of one system are communication with the same layer of other system (peer-to-peer) (windows - transportation <-> MAC\OS X - transportation). But they can have totally different implementations as long as requirements behavior of protocol is the same.
 
+---
+
 [**peer-to-peer**](https://en.wikipedia.org/wiki/Peer-to-peer) - decentralized communications model in which each party has the same capabilities and either party can initiate a communication session.
+
+---
 
 [**protocol data unit (PDU)**](https://en.wikipedia.org/wiki/Protocol_data_unit) - is a single unit of information transmitted among peer entities of a computer network. It is composed of protocol-specific control information and user data. In the layered architectures of communication protocol stacks, each layer implements protocols tailored to the specific type or mode of data exchange. For example, the Transmission Control Protocol (TCP) implements a connection-oriented transfer mode, and the PDU of this protocol is called a segment, while the User Datagram Protocol (UDP) uses datagrams as protocol data units for connectionless communication. A layer lower in the Internet protocol suite, at the Internet layer, the PDU is called a packet, irrespective of its payload type.
 
@@ -62,6 +70,8 @@ The recommendation X.200 describes seven layers, labelled 1 to 7. Layer 1 is the
 | 6   | [Presentation](https://en.wikipedia.org/wiki/Presentation_layer) | [Data](<https://en.wikipedia.org/wiki/Data_(computing)>)                                                            | Translation of data between a networking service and an application; including character encoding, data compression and encryption/decryption. Ensures that data is in a useable format and is where data encryption occurs.   |
 | 7   | [Application](https://en.wikipedia.org/wiki/Application_layer)   | [Data](<https://en.wikipedia.org/wiki/Data_(computing)>)                                                            | High-level protocols such as for resource sharing or remote file access, e.g. HTTP. Human-computer interaction layer, where applications can access the network services.                                                      |
 
+---
+
 Computer network separation:
 
 - [**WAN**](https://www.cloudflare.com/learning/network-layer/what-is-a-wan/) (Wide Area Network) (Sieci rozległe) - connect local networks, for example global network Internet.
@@ -69,13 +79,54 @@ Computer network separation:
 - [**LAN**](https://www.cloudflare.com/learning/network-layer/what-is-a-lan/) (Local Area Network) (Sieci lokalne).
 - [**PAN**](https://en.wikipedia.org/wiki/Personal_area_network) (Personal Area Network) / [**BAN**](https://en.wikipedia.org/wiki/Body_area_network) (Body Area Network) (Sieci personalne).
 
+---
+
 **Equipment** used in each layer:
 
 1. [Physical](https://en.wikipedia.org/wiki/Physical_layer) - [**hub**](https://www.geeksforgeeks.org/computer-networks/what-is-network-hub-and-how-it-works/), [**repeater**](https://www.geeksforgeeks.org/computer-networks/repeaters-in-computer-network/) (regenerator sygnału).
 2. [Data link](https://en.wikipedia.org/wiki/Data_link_layer) - [**switch**](https://www.cloudflare.com/learning/network-layer/what-is-a-network-switch/), [**bridge**](https://en.wikipedia.org/wiki/Network_bridge) (mostek).
-2. [Network](https://en.wikipedia.org/wiki/Network_layer) - [**router**](https://www.cloudflare.com/learning/network-layer/what-is-a-router/).
+3. [Network](https://en.wikipedia.org/wiki/Network_layer) - [**router**](https://www.cloudflare.com/learning/network-layer/what-is-a-router/).
+
+Commutation (Komutacja) ❌
+
+---
+
+Transmissions modes:
+
+- **Simplex** - only one way transmission is possible.
+- **Half-duplex** - two way transmission is possible but only on way available in that time.
+- **Duplex** - two way transmission is possible simultaneously.
+
+---
+
+**DTE** (Data terminal equipment):
+
+- end devices
+- computers, routers
+
+**DCE** (Data communication equipment)(Data Circuit Terminating Equipment):
+
+- middleware devices in transmissions.
+- repeater, bridges, reconnects, modems, servers.
+
+---
+
+[**bandwidth**](https://www.solarwinds.com/resources/it-glossary/network-bandwidth) (szerokość pasma) - is a measure of the data transfer rate or capacity of a given network. It's a crucial network measurement for understanding the speed and quality of a network. Network bandwidth is commonly measured in bits per second (bps). In practice, organizations and internet service providers (ISPs) measure bandwidth in megabits per second (Mbps) or gigabits per second (Gbps).
+- expresses the maximum theoretical network throughput
+- the basic unit is bit/s
+
+[**throughput**](https://www.solarwinds.com/resources/it-glossary/network-bandwidth) (przepływność) - real-time value of bandwidth. Is always less then bandwidth value because of lots factors.
 
 # 1. Physical
+
+There are such cables: [**optical fiber cable**](https://www.hfcl.com/blog/fiber-optic-cable), [**copper cable**](https://www.garlandtechnology.com/blog/surprise-copper-cables-still-dominate-industrial-networks).
+
+[**Optical fiber cable**](https://www.hfcl.com/blog/fiber-optic-cable): single-mod (jednomodowe), multimode (wieliemodowe).
+
+[**Copper cable**](https://www.garlandtechnology.com/blog/surprise-copper-cables-still-dominate-industrial-networks): twisted pair(skrętka), concentric(koncentryczny).
+
+- **twisted pair**: shielded (ekranowana), unshielded (nieekranowana)
+- **concentric**: thin (cienki), fat (gruby)
 
 ...
 

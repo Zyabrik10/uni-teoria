@@ -1,8 +1,7 @@
 1.  Adres 192.10.13.42 klasa 
 2.  Na co pozwala liczenie do nieskończoności w RIP 
-3.  Co zawiera tablica ARP 
+3.  Co zawiera tablica ARP. Do czego służy ARP 
 4.  Ponowne złożenie IP który uległ fragmentacji  jest dokonywane przy 
-5.  Do czego służy ARP 
 6.  Komunikaty ICMP po poleceniu ping 
 7.  Skąd IP wie, gdzie dostarczyć pakiet o wskazanym adresie IP 
 8.  Opis routingu dynamicznego 

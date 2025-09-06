@@ -48,7 +48,7 @@ There are two main models of Computer Network: [**OSI/ISO**](https://en.wikipedi
 
 **PDU** of N + 1 layer is **encapsulated** to N layer.
 
-**decapsulation proces**:
+**Decapsulation proces**:
 
 - the sending side performs the encapsulation process
 - the receiving side must know how to interpret the data field of each layer.:
@@ -117,7 +117,9 @@ Transmissions modes:
 
 [**throughput**](https://www.solarwinds.com/resources/it-glossary/network-bandwidth) (przepływność) - real-time value of bandwidth. Is always less then bandwidth value because of lots factors.
 
-# 1. Physical
+# 1. Physical ([media](https://www.geeksforgeeks.org/computer-networks/types-transmission-media/))
+
+**Physical** layer is responsible for proving with accessability to deliver data physically. 
 
 There are such cables: [**optical fiber cable**](https://www.hfcl.com/blog/fiber-optic-cable), [**copper cable**](https://www.garlandtechnology.com/blog/surprise-copper-cables-still-dominate-industrial-networks).
 
@@ -130,9 +132,124 @@ There are such cables: [**optical fiber cable**](https://www.hfcl.com/blog/fiber
 
 ...
 
-# 2. Data link
+# 2. [Data link](https://www.geeksforgeeks.org/computer-networks/data-link-layer/)
 
-...
+**Data link** is responsible for node-to-node delivery of data within the same **LAN**.
+
+**Data link** is divided into two sub-layers:
+- [**LLC**]()(Logic Link Control) 
+- [**MAC**]()(Media Access Control)
+
+## [**LLC**]()
+
+LLC deals with [**multiplexing**](), the flow data among applications, providing error messages and acknowledgments, and other services.
+
+## [**MAC**]()
+
+MAC sublayer manages the device's interaction, responsible for addressing frames, and also controls physical media access. The data link layer receives the information in the form of packets from the Network layer, it divides packets into frames and sends those frames bit-by-bit to the underlying physical layer. 
+
+
+***Data link*** is responsible for:
+- Transferring **Framed** data through media.
+- Detecting errors.
+- Providing with MAC Address.
+
+---
+
+LAN characteristics:
+- Small distance (several kilometers)
+- High bandwidth required (up to 1 Gb/s)
+- Used topologies:
+  - Bus
+  - Star, Extended star
+  - Ring
+- Used media:
+  - Copper cable
+  - Optical fiber cable
+  - Wireless
+
+Does only LAN have such characteristics or all area networks can have the same?
+
+---
+
+LAN Protocols of IEEE 802 (802 number of series of protocols):
+- 802.3 Ethernet
+- 802.4 Token Bus
+- 802.5 Token Ring
+- 802.11 Wireless LAN (WLAN)
+- 802.15 PAN (Bluetooth + ZigBee)
+
+What do those protocols explain? 
+Do they only explain how to physically connect devices?
+
+---
+
+**Frame** - that is a part of the whole data transferred through media.
+
+---
+
+NIC
+
+---
+
+Addresses in LAN
+unicast
+multicast
+broadcast
+
+---
+
+Pytania kontrolne
+? Czy rozumiem pojęcie topologii sieci?
+? Czy rozumiem zalety i wady poszczególnych 
+topologii?
+? Czy rozumiem pojęcie ramki i jej pól?
+? Czy znam trzy podstawowe typy adresów?
+? Czy znam cechy, zalety i wady adresacji MAC?
+
+---
+
+Standardy LAN - Ethernet 
+
+Postać ramki
+Protokół CSMA/CD
+
+---
+
+![alt text](image.png)
+
+---
+
+CSMA/CD
+
+Carrier Sense 
+Multiple Access
+Collision Detection
+
+---
+
+Rozległość sieci Ethernet
+
+---
+
+Standardy LAN
+Wireless LAN (WLAN)
+Ogólne informacje
+Protokół dostępu do medium
+
+---
+
+Szybsze wersje standardu Ethernet
+• Fast Ethernet
+- 100 Mb/s
+- formalnie zaakceptowany w 1995 r.
+• Gigabit Ethernet
+- formalnie zaakceptowany w 1995 r.
+• 10 Gigabit Ethernet
+• Możliwa współpraca pomiędzy standardami: 
+autonegocjacja
+
+---
 
 # 3. Network
 
@@ -256,6 +373,41 @@ It is often used for audio and video streaming, such as IP-based cable, TV netwo
 - **Number of Hosts per Network**: Research/Reserved/Experimental.
 
 **Class E** IP address ranges are reserved and are not publicly used.
+
+---
+
+Datagram
+
+---
+
+IPv6
+
+# Sep
+
+---
+
+VLAN ????????
+
+---
+
+ARP (Address Resolution Protocol) ????
+
+---
+
+Metody uzyskiwania adresu IP
+
+RARP, BOOTP, DHCP
+
+---
+
+Variable Length Subnet Mask (VLSM)
+Wyznaczanie tras w sieci IP
+
+---
+
+RIP, IGRP, OSPF, EGP, BGP
+
+---
 
 # Practical knowledge
 
